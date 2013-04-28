@@ -1,8 +1,16 @@
 use Rack::Static, 
   :urls => ["/images", "/js", "/css"],
-  :root => "public"
+  :root => "public",
+  :index => 'index.html'
 
-run lambda { |env|
+run Rack::File.new("public")
+
+
+
+#
+
+=begin
+lambda { |env|
   [
     200, 
     {
@@ -12,3 +20,4 @@ run lambda { |env|
     File.open('public/index.html', File::RDONLY)
   ]
 }
+=end
