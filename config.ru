@@ -3,21 +3,19 @@ use Rack::Static,
   :root => "public",
   :index => 'index.html'
 
-run Rack::File.new("public")
-
-
-
-#
-
-=begin
-lambda { |env|
+map '/cv.appcache' do
+  run lambda { |env|
   [
     200, 
     {
-      'Content-Type'  => 'text/html', 
-      'Cache-Control' => 'public, max-age=86400' 
+      'Content-Type'  => 'text/cache-manifest', 
+      'Cache-Control' => 'no-cache, private' 
     },
-    File.open('public/index.html', File::RDONLY)
+    File.open('public/cv.appcache', File::RDONLY)
   ]
 }
-=end
+end
+
+map '/' do
+  run Rack::File.new("public")
+end
