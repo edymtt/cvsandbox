@@ -1,12 +1,18 @@
 CACHE MANIFEST
  
-# Offline cache 2013/06/06 18:48 UTC
+# Offline cache 2013/06/11 16:11 UTC
 # html files
 index.html
  
 # css files
 css/bootstrap.min.css
 css/bootstrap-responsive.min.css
+css/cv.css
+css/sintony.css
+
+# font
+ttf/Sintony-Bold.ttf
+ttf/Sintony-Regular.ttf
  
 # js files
 js/offline.js

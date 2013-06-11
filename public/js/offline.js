@@ -3,11 +3,12 @@
 	
 	function loaded()
 	{
-		var h2Title = document.querySelector("h2 a");
+		//var h2Title = document.querySelector("h2 a");
 		var connectionStatus = ((navigator.onLine) ? 'online' : 'offline');
 		
-		h2Title.textContent = h2Title.textContent + " - currently: " + connectionStatus;
-		document.title = document.title.replace(" | "," - currently: " + connectionStatus + " | ");
+		console.log("Currently " + connectionStatus);
+		//h2Title.textContent = h2Title.textContent + " - currently: " + connectionStatus;
+		//document.title = document.title.replace(" | "," - currently: " + connectionStatus + " | ");
 		
 		switch(webappCache.status)
 		{
@@ -35,6 +36,7 @@
 	{
 		webappCache.swapCache();
 		console.log("Cache has been updated due to a change found in the manifest");
+		window.location.reload();
 	}
 	function errorCache()
 	{
