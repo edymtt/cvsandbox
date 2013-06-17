@@ -36,14 +36,32 @@
 	{
 		webappCache.swapCache();
 		console.log("Cache has been updated due to a change found in the manifest");
-		window.location.reload();
+		$( "#checkingtext" ).html("A new version is available. Click <a href=\"/\">here</a> to reload!");
+		//window.location.reload();
+	}
+	function noUpdateCallback()
+	{
+		hideAlert();
 	}
 	function errorCache()
 	{
 		console.log("You're either offline or something has gone horribly wrong.");
 	}
+	function checkingCallback()
+	{
+		console.log("Checking for updates...");
+		var hiddenBox = $( "#checkingalert" );
+hiddenBox.show();
+	}
+	function hideAlert()
+	{
+		var hiddenBox = $( "#checkingalert" );
+hiddenBox.hide();
+	}
 
 	window.addEventListener("load", loaded, false);
 	webappCache.addEventListener("updateready", updateCache, false);
 	webappCache.addEventListener("error", errorCache, false);
+	webappCache.addEventListener("checking", checkingCallback, false);
+	webappCache.addEventListener("noupdate", noUpdateCallback, false);
 })();
