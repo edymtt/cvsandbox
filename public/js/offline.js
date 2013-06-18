@@ -37,6 +37,8 @@
 		webappCache.swapCache();
 		console.log("Cache has been updated due to a change found in the manifest");
 		$( "#checkingtext" ).html("A new version is available. Click <a href=\"/\">here</a> to reload!");
+		$( "#checkingalert" ).addClass("alert-info");
+		$( "#checkingalert" ).show();
 		//window.location.reload();
 	}
 	function noUpdateCallback()
@@ -45,7 +47,10 @@
 	}
 	function errorCache()
 	{
-		console.log("You're either offline or something has gone horribly wrong.");
+		$( "#checkingtext" ).html("You're either offline or something has gone horribly wrong :-)");
+		$( "#checkingalert" ).addClass("alert-error");
+		$( "#checkingalert" ).show();
+		
 	}
 	function checkingCallback()
 	{
