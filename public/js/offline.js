@@ -41,6 +41,22 @@
 		$( "#checkingalert" ).show();
 		//window.location.reload();
 	}
+
+    function downloadingCallback()
+	{
+		$( "#checkingtext" ).html("Downloading new version...");
+		$( "#checkingalert" ).show();
+		//window.location.reload();
+	}
+
+	function progressCallback(e)
+	{
+		if(e.lengthComputable)
+		{
+		$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total);
+		$( "#checkingalert" ).show();
+	}
+	}
 	function noUpdateCallback()
 	{
 		hideAlert();
@@ -63,10 +79,20 @@ hiddenBox.show();
 		var hiddenBox = $( "#checkingalert" );
 hiddenBox.hide();
 	}
+	function obsoleteCallback()
+	{
+		$( "#checkingtext" ).html("The page does not exist on the server and local cache will be deleted :-(");
+		$( "#checkingalert" ).addClass("alert-error");
+		$( "#checkingalert" ).show();
+		
+	}
 
 	window.addEventListener("load", loaded, false);
 	webappCache.addEventListener("updateready", updateCache, false);
 	webappCache.addEventListener("error", errorCache, false);
 	webappCache.addEventListener("checking", checkingCallback, false);
 	webappCache.addEventListener("noupdate", noUpdateCallback, false);
+	webappCache.addEventListener("downloading", downloadingCallback, false);
+	webappCache.addEventListener("progress", progressCallback, false);
+	webappCache.addEventListener("obsolete", obsoleteCallback, false);
 })();
