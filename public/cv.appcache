@@ -1,6 +1,6 @@
 CACHE MANIFEST
  
-# Offline cache 2013/07/04 18:52:14 UTC
+# Offline cache 2013/07/11 17:36:14 UTC
 # html files
 index.html
  
@@ -23,6 +23,7 @@ http://code.jquery.com/jquery.js
 img/photo_eric.jpg
 apple-touch-icon.png
 http://www.w3.org/html/logo/badge/html5-badge-v-storage.png
+http://i.creativecommons.org/l/by/3.0/88x31.png
 
 NETWORK:
 *
