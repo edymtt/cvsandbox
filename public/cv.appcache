@@ -1,8 +1,8 @@
 CACHE MANIFEST
  
-# Offline cache 2013/08/18 15:57:16 UTC
+# Offline cache 2013/08/18 17:50:16 UTC
 # html files
-index.html
+cv.html
  
 # css files
 css/bootstrap.min.css
@@ -26,4 +26,5 @@ http://www.w3.org/html/logo/badge/html5-badge-v-storage.png
 http://i.creativecommons.org/l/by/3.0/88x31.png
 
 NETWORK:
+index.html
 *
