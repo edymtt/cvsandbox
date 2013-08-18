@@ -89,6 +89,7 @@ hiddenBox.hide();
 
 	window.addEventListener("load", loaded, false);
 	webappCache.addEventListener("updateready", updateCache, false);
+	//webappCache.addEventListener("cached", updateCache, false);
 	webappCache.addEventListener("error", errorCache, false);
 	webappCache.addEventListener("checking", checkingCallback, false);
 	webappCache.addEventListener("noupdate", noUpdateCallback, false);
