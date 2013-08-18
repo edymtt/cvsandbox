@@ -44,7 +44,7 @@
 
     function downloadingCallback()
 	{
-		$( "#checkingtext" ).html("Downloading new version...");
+		$( "#checkingtext" ).html("Downloading new version...<br>If download does not complete, you can <a href=\"/\">force reload</a>");
 		$( "#checkingalert" ).show();
 		//window.location.reload();
 	}
@@ -53,7 +53,7 @@
 	{
 		if(e.lengthComputable)
 		{
-		$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total);
+		$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total + "<br>If download does not complete or you are using <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=832497#c5\">Firefox 24</a>, you can <a href=\"/\">force reload</a>");
 		$( "#checkingalert" ).show();
 	}
 	}
