@@ -9,7 +9,8 @@ padding-bottom: 40px;
 .container-narrow {
 margin: 0 auto;
 max-width: 500px;
-} 
+}
+
 /* http://stackoverflow.com/questions/8844527/css-center-a-fixed-div
 http://stackoverflow.com/questions/3157372/css-horizontal-centering-of-a-fixed-div
 */
