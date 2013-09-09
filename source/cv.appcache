@@ -1,6 +1,8 @@
+---
+---
 CACHE MANIFEST
  
-# Offline cache 2013-09-09 12:29:15 UTC
+# Offline cache {{ site.time | to_utc }}
 # html files
 cv.html
  

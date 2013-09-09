@@ -1,0 +1,2 @@
+exclude: [push.sh, test.sh, test.bat, publish.sh, publish.bat, devserver.bat, devserver.sh]
+destination: ../public

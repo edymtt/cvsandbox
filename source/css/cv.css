@@ -1,0 +1,31 @@
+/* Inspired by http://twitter.github.io/bootstrap/examples/marketing-narrow.html */
+
+body {
+padding-top: 20px;
+padding-bottom: 40px;
+ font-family:  sintony, sans-serif; /* sintony, */
+} 
+
+.container-narrow {
+margin: 0 auto;
+max-width: 500px;
+} 
+/* http://stackoverflow.com/questions/8844527/css-center-a-fixed-div
+http://stackoverflow.com/questions/3157372/css-horizontal-centering-of-a-fixed-div
+*/
+div#alert-container {
+	position: fixed;
+	top: 0;
+	right: 10%;
+	bottom: auto;
+	left: 10%;
+	/* width: 100%;*/
+	/*background-color: red;*/
+	text-align: center;
+}
+
+#alert-container > div
+{
+    display: inline-block;   
+    text-align: left;
+}
