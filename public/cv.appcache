@@ -1,6 +1,6 @@
 CACHE MANIFEST
  
-# Offline cache 2013-09-09 12:58:51 UTC
+# Offline cache 2013-09-10 10:41:10 UTC
 # html files
 cv.html
  
@@ -11,8 +11,8 @@ css/cv.css
 css/sintony.css
 
 # font
-ttf/Sintony-Bold.ttf
-ttf/Sintony-Regular.ttf
+fonts/Sintony-Bold.ttf
+fonts/Sintony-Regular.ttf
  
 # js files
 js/offline.js

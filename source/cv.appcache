@@ -13,8 +13,8 @@ css/cv.css
 css/sintony.css
 
 # font
-ttf/Sintony-Bold.ttf
-ttf/Sintony-Regular.ttf
+fonts/Sintony-Bold.ttf
+fonts/Sintony-Regular.ttf
  
 # js files
 js/offline.js
