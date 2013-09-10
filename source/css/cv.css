@@ -23,6 +23,7 @@ div#alert-container {
 	/* width: 100%;*/
 	/*background-color: red;*/
 	text-align: center;
+	z-index:10000;
 }
 
 #alert-container > div

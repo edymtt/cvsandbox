@@ -38,6 +38,8 @@
 		console.log("Cache has been updated due to a change found in the manifest");
 		$( "#checkingtext" ).html("A new version is available. Click <a href=\"/cv.html\">here</a> to reload!");
 		$( "#checkingalert" ).addClass("alert-info");
+		$( "#checkingalert" ).removeClass("alert-warning");
+		$( "#checkingalert" ).removeClass("alert-danger");
 		$( "#checkingalert" ).show();
 		//window.location.reload();
 	}
@@ -45,6 +47,7 @@
     function downloadingCallback()
 	{
 		$( "#checkingtext" ).html("Downloading new version...<br>If download does not complete, you can <a href=\"/cv.html\">force reload</a>");
+		$( "#checkingalert" ).addClass("alert-warning");
 		$( "#checkingalert" ).show();
 		//window.location.reload();
 	}
@@ -54,7 +57,9 @@
 		if(e.lengthComputable)
 		{
 		$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total + "<br>If download does not complete or you are using <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=832497#c5\">Firefox 24</a>, you can <a href=\"/cv.html\">force reload</a>");
+		$( "#checkingalert" ).addClass("alert-warning");
 		$( "#checkingalert" ).show();
+			
 	}
 	}
 	function noUpdateCallback()
@@ -64,7 +69,7 @@
 	function errorCache()
 	{
 		$( "#checkingtext" ).html("You're either offline or something has gone horribly wrong :-)");
-		$( "#checkingalert" ).addClass("alert-error");
+		$( "#checkingalert" ).addClass("alert-danger");
 		$( "#checkingalert" ).show();
 		
 	}
@@ -82,7 +87,7 @@ hiddenBox.hide();
 	function obsoleteCallback()
 	{
 		$( "#checkingtext" ).html("The page does not exist on the server and local cache will be deleted :-(");
-		$( "#checkingalert" ).addClass("alert-error");
+		$( "#checkingalert" ).addClass("alert-danger");
 		$( "#checkingalert" ).show();
 		
 	}
