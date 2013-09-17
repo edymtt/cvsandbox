@@ -31,3 +31,13 @@ div#alert-container {
     display: inline-block;   
     text-align: left;
 }
+
+.check 
+{
+	list-style-image: url(/img/check.png);
+}
+
+.cross
+{
+	list-style-image: url(/img/cross.png);
+}

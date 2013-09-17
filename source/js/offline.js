@@ -77,7 +77,8 @@
 	{
 		console.log("Checking for updates...");
 		var hiddenBox = $( "#checkingalert" );
-hiddenBox.show();
+		$( "#checkingalert" ).addClass("alert-warning");
+        hiddenBox.show();
 	}
 	function hideAlert()
 	{
