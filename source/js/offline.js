@@ -34,14 +34,29 @@
 	}
 	function updateCache()
 	{
-		webappCache.swapCache();
+		trySwapCache();
+
 		console.log("Cache has been updated due to a change found in the manifest");
 		$( "#checkingtext" ).html("A new version is available. Click <a href=\"/cv.html\">here</a> to reload!");
 		$( "#checkingalert" ).addClass("alert-info");
 		$( "#checkingalert" ).removeClass("alert-warning");
 		$( "#checkingalert" ).removeClass("alert-danger");
 		$( "#checkingalert" ).show();
-		//window.location.reload();
+	}
+
+	function trySwapCache()
+	{
+		try
+		{
+			webappCache.swapCache();
+		}
+		catch(ex)
+		{
+			//Modeled after Firefox 23/24 behavior, the swap occured but 
+			//an exception is thrown. Nevertheless, we log the exception
+			//so to catch new scenarios in the future
+			console.log(ex);
+		}
 	}
 
     function downloadingCallback()
@@ -49,18 +64,16 @@
 		$( "#checkingtext" ).html("Downloading new version...<br>If download does not complete, you can <a href=\"/cv.html\">force reload</a>");
 		$( "#checkingalert" ).addClass("alert-warning");
 		$( "#checkingalert" ).show();
-		//window.location.reload();
 	}
 
 	function progressCallback(e)
 	{
 		if(e.lengthComputable)
 		{
-		$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total + "<br>If download does not complete or you are using <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=832497#c5\">Firefox 24</a>, you can <a href=\"/cv.html\">force reload</a>");
-		$( "#checkingalert" ).addClass("alert-warning");
-		$( "#checkingalert" ).show();
-			
-	}
+			$( "#checkingtext" ).html("Downloaded " + e.loaded + " out of " + e.total + "<br>If download does not complete, you can <a href=\"/cv.html\">force reload</a>");
+			$( "#checkingalert" ).addClass("alert-warning");
+			$( "#checkingalert" ).show();
+		}
 	}
 	function noUpdateCallback()
 	{
